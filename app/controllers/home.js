@@ -1,5 +1,5 @@
 const index = (req, res) => {
-    res.json({ result: 'Home page'});
+    res.send("Manage vehicles store");
 };
 
 export default { index };
