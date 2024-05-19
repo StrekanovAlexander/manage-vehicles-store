@@ -1,8 +1,12 @@
-import { all } from './controllers/brands.js';
+import { brand, home } from './controllers/index.js';
 
 const routes = (app) => {
-    app.get('/', (req, res) => res.send('Manage vehicles store'));
-    app.get('/brands', all);
+    app.get('/', home.index);
+
+    app.get('/brands', brand.all);
+    app.post('/brands', brand.create);
+    app.put('/brands/:id', brand.update);
+    app.delete('/brands/:id', brand.remove);
 };
 
 export { routes };

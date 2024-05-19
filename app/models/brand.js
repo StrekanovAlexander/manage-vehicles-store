@@ -5,9 +5,7 @@ const Schema = new mongoose.Schema({
     name: String,
     image:  { type: String, default: 'N/A' },
     actuality: { type: Boolean, default: false },
-    createdAt: { type: Date, default: Date.now }
-}, {
-    versionKey: false
+    createdAt: { type: Date, default: Date.now },
 });
 
 mongoose.model('brands', Schema);
