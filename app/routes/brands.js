@@ -1,12 +1,8 @@
-import { brand, home } from './controllers/index.js';
+import brand from '../controllers/brand.js';
 
-const routes = (app) => {
-    app.get('/', home.index);
-
+export default (app) => {
     app.get('/brands', brand.all);
     app.post('/brands', brand.create);
     app.put('/brands/:id', brand.update);
     app.delete('/brands/:id', brand.remove);
-};
-
-export { routes };
+}
