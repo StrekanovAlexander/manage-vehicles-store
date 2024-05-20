@@ -5,4 +5,6 @@ export default (app) => {
     app.post('/users', user.create);
     app.put('/users/:id', user.update);
     app.delete('/users/:id', user.remove);
+
+    app.post('/signin', user.signin);
 }

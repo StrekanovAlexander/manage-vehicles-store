@@ -2,6 +2,7 @@ import mongoose from 'mongoose';
 const Brand = mongoose.model('brands');
 
 const all = (req, res) => {
+    res.set('Content-Type', 'application/json');
     Brand.find()
         .exec()
         .then(brands => res.json(brands))
@@ -9,12 +10,14 @@ const all = (req, res) => {
 };
 
 const create = (req, res) => { 
+    res.set('Content-Type', 'application/json');
     Brand.create(req.body)
         .then(brand => res.json(brand))
         .catch(err => res.status(500).json(err))
 };
 
 const update = (req, res) => { 
+    res.set('Content-Type', 'application/json');
     Brand.findOneAndUpdate({ id: req.params.id }, req.body)
         .exec()
         .then(() => res.json({ result: 'success' }))
@@ -22,6 +25,7 @@ const update = (req, res) => {
 };
 
 const remove = (req, res) => { 
+    res.set('Content-Type', 'application/json');
     Brand.deleteOne({ id: req.params.id })
         .exec()
         .then(() => res.json({ result: 'success' }))
